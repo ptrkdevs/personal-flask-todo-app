@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding:0;
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    min-height: 100vh;
+    display :flex;
+    flex-direction: column;
+}
+
+
+html, body {
+    line-height: 1.4em;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+/* utils */
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.container {
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+
+.fa-square-plus {
+    color: #79C75A;
+}
+
+/* header */
+
+header {
+    height: 10vh;
+    padding: 2rem 0;
+    margin: 3.5rem 0 6.3rem 0;
+}
+
+header .container  {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo .logo--text {
+    font-size: 3rem;
+    margin-left: 2rem;
+    letter-spacing: .5rem;
+}
+
+header .navbar {
+    display: flex;
+    align-items: center;
+}
+
+header .navbar .navbar__item {
+    font-size: 1.7rem;
+    margin-left: 3.5rem;
+    padding: 1rem;
+    border-bottom: 2px solid black;
+}
+
+header .navbar .navbar__item i {
+    padding-right: 1rem;
+}
+
+header .navbar .navbar__item .navbar--link {
+    color: black;
+    font-weight: 700;
+}
+
+/* hero */
+
+
+.hero {
+    height: 40vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/static/images/hero.jpg');
+    background-size: cover;
+    background-position: 10% center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    margin-bottom: 3.6rem;
+}
+    
+.welcome-box {
+    color: white;
+}
+
+.welcome-box h2 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-left: 5rem;
+}
+
+/* collections */
+
+.collections--header {
+    font-size: 2rem;
+    margin-bottom: 4.4rem;
+}
+
+.collection--item {
+    padding: 2rem;
+    border-left: 8px solid black;
+    font-size: 1.7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3.4rem;
+    text-transform: uppercase;
+}
+
+.collection--item .fa-list {
+    font-size: 2rem;
+}
+
+.collection--delete {
+    background-color: #FF0000;
+    color: white;
+    padding: 1rem;
+    border: none;
+}
+
+
+footer {
+    margin-top: auto;
+    background: #1D86FF;
+    padding: 5rem 0;
+    color: white;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+footer .footer--link {
+    font-size: 1.5rem;
+    color: inherit;
+}
