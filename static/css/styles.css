@@ -242,6 +242,64 @@ header .navbar .navbar__item .navbar--link {
 
 
 
+/* form */
+
+.todo-form {
+    display: flex;
+    padding: 2rem;
+    align-items: center;
+}
+
+.form-image, .form-inputs {
+    flex-basis: 50;
+}
+
+.form-inputs {
+    width: 100%;
+}
+.form-inputs form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.form-inputs input[type=text] {
+    display: block;
+    font-size: 18px;
+    width: 100%;
+    border: 1px solid #e0e0e0;
+    border-radius: .5rem;
+    margin: 2rem 0;
+    padding: 1rem ;
+}
+
+.form-inputs input[type=text]:focus {
+    outline:none;
+    border: 2px solid #1D86FF;
+}
+
+.form-inputs input[type=submit]
+{
+    display: inline-block;
+    font-size: 1.6rem;
+    font-weight: bold;
+    border: none;
+    color: white;
+    background: #1D86FF;
+    padding: .8rem 2rem;
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+.form-inputs input[type=submit]:hover {
+    background: rgba(25, 118, 224, 0.855)
+}
+
+
 footer {
     margin-top: auto;
     background: #1D86FF;
