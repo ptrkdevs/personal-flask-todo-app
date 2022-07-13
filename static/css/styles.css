@@ -25,6 +25,10 @@ html, body {
 
 /* utils */
 
+.bold {
+    font-weight: 500;
+}
+
 a {
     text-decoration: none;
     color: black;
@@ -144,6 +148,100 @@ header .navbar .navbar__item .navbar--link {
 }
 
 
+
+/* single todo item page */
+
+.todo_dte  {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 3rem;
+    
+}
+
+
+.todo-date  {
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+/* metrics */
+
+.metrics {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 4rem;
+}
+
+
+.metrics__card {
+    flex-basis: 30%;
+    background-color: #FAFAFA;
+    padding: 3rem 2rem;
+    font-size: 1.8rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+  
+}
+
+.metrics__card .metric__text {
+    font-weight: 200;
+}
+
+.metrics__card .metric-icon {
+    font-size: 4rem;
+    margin-right: 3rem;
+}
+
+.metrics__card .metric-total {
+    color: #CC61B3;
+}
+.metrics__card .metric-remaining {
+    color: #1D86FF;
+}
+.metrics__card .metric-done {
+    color: #79C75A;
+}
+
+/* todos */
+
+
+.todos, .todos-archived {
+    margin-bottom: 3rem;
+}
+
+.todo__item, .archived__item {
+    padding: 3rem 2rem;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #EDF1F2;
+}
+
+.archived__item {
+    color: #969595;
+    text-decoration: line-through;
+}
+
+
+ .delete-todo-btn {
+    margin-right: 1.5rem;
+    color: #FF0000;
+}
+
+.todo__item .check-todo-btn {
+    margin-right: 1.5rem;
+    color: #79C75A;
+}
+
+
+
 footer {
     margin-top: auto;
     background: #1D86FF;
@@ -162,3 +260,6 @@ footer .footer--link {
     font-size: 1.5rem;
     color: inherit;
 }
+
+
+
