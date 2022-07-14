@@ -20,9 +20,16 @@
 
         <nav>
           <ul class="navbar">
+            {% if request.path.split("/")[1] == "todos"  %}
+            {% set list_id = request.path.split("/")[2] %}
             <li class="navbar__item">
-              <i class="fa-solid fa-square-plus"></i><a href="#" class="navbar--link">COLLECTION</a>
+              <i class="fa-solid fa-square-plus"></i><a href="{{ url_for('create_todo', id=list_id) }}" class="navbar--link">TODO</a>
             </li>
+            {% else %}
+            <li class="navbar__item">
+              <i class="fa-solid fa-square-plus"></i><a href="{{ url_for('create_collection') }}" class="navbar--link">COLLECTION</a>
+            </li>
+            {% endif %}
             <li class="navbar__item">
               <a href="{{ url_for('home')}}" class="navbar--link">HOME</a>
             </li>

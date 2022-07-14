@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="todo-form">
+  <div class="form-image">
+    <img src="/static/images/form_img.png" alt="form-image" />
+  </div>
+
+  <div class="form-inputs">
+    <form action="#" method="POST">
+      {% if action == 'add-collection' %}
+      <label class="form-label" for="item">ADD COLLECTION</label>
+      {% else %}
+      <label class="form-label" for="item">ADD TODO</label>
+      {%endif %}
+      <input type="text" name="item" />
+      <input type="submit" class="form-btn" />
+    </form>
+  </div>
+</div>
+{% endblock %}

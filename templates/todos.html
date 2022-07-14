@@ -1,28 +1,31 @@
 {% extends 'base.html' %} {% block content %}
 
 <div class="todo_dte">
-  <h1 class="todo-date">Tuesday, 12th</h1>
-  <h1 class="todo-date todo-date--month">July</h1>
+  <h1 class="todo-date">{{date.year}}, {{date.day}}</h1>
+  <h1 class="todo-date todo-date--month">{{date.month}}</h1>
 </div>
+
+{% set metric_total,metric_remaining,metric_done = todos | length, active_todos | length ,
+archived_todos | length %}
 
 <!-- metrics -->
 <section class="metrics">
   <div class="metrics__card">
     <i class="fa-solid fa-chart-pie metric-icon metric-total"></i>
     <div class="metric-count">
-      <h2 class="metric__text"><span class="bold">5</span> TOTAL</h2>
+      <h2 class="metric__text"><span class="bold">{{metric_total}}</span> TOTAL</h2>
     </div>
   </div>
   <div class="metrics__card">
     <i class="fa-solid fa-note-sticky metric-icon metric-remaining"></i>
     <div class="metric-count">
-      <h2 class="metric__text"><span class="bold">3</span> REMAINING</h2>
+      <h2 class="metric__text"><span class="bold">{{metric_remaining}}</span> REMAINING</h2>
     </div>
   </div>
   <div class="metrics__card">
     <i class="fa-solid fa-thumbs-up metric-icon metric-done"></i>
     <div class="metric-count">
-      <h2 class="metric__text"><span class="bold">2</span> DONE</h2>
+      <h2 class="metric__text"><span class="bold">{{metric_done}}</span> DONE</h2>
     </div>
   </div>
 </section>
@@ -32,15 +35,15 @@
 <section class="todos">
   <h1>Active</h1>
 
-  {% for item in todos %}
+  {% for item in active_todos %}
   <div class="todo__item">
     <p class="todo__item-text">{{item.body}}</p>
 
     <div class="todo__item-actions">
-      <a href="#" class="delete-todo-btn">
+      <a href="{{ url_for('delete_todo',id=item._id) }}" class="delete-todo-btn">
         <i class="fa-solid fa-trash"></i>
       </a>
-      <a href="#" class="check-todo-btn">
+      <a href="{{ url_for('tag_todo', id=item._id) }}" class="check-todo-btn">
         <i class="fa-solid fa-square-check"></i>
       </a>
     </div>
@@ -52,26 +55,17 @@
 <!-- Archived todos -->
 <section class="todos-archived">
   <h1>Archived</h1>
-
+  {% for item in archived_todos %}
   <div class="archived__item">
-    <p class="archived__item-text">Do Laundry</p>
+    <p class="archived__item-text">{{item.body}}</p>
 
     <div class="archived__item-actions">
-      <a href="#" class="delete-todo-btn">
+      <a href="{{ url_for('delete_todo',id=item._id) }}" class="delete-todo-btn">
         <i class="fa-solid fa-trash"></i>
       </a>
     </div>
   </div>
-
-  <div class="archived__item">
-    <p class="archived__item-text">Watch movie</p>
-
-    <div class="archived__item-actions">
-      <a href="#" class="delete-todo-btn">
-        <i class="fa-solid fa-trash"></i>
-      </a>
-    </div>
-  </div>
+  {% endfor %}
 </section>
 
 {% endblock %}

@@ -17,7 +17,7 @@
         ><i class="fa-solid fa-list"></i> {{todo.name}}</a
       >
 
-      <a href="#" class="collection--delete">
+      <a href="{{ url_for('delete_collection', id=todo._id)}}" class="collection--delete">
         <i class="fa-solid fa-trash"></i>
       </a>
     </div>

@@ -320,4 +320,39 @@ footer .footer--link {
 }
 
 
+/* delete form */
 
+
+.confirm-form {
+    max-width: 70%;
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 1px solid #969595;
+    border-radius: 1rem;
+}
+.confirm-form h1 {
+    margin-bottom: 4rem;
+    font-weight: 400;
+}
+
+.confirm-form  button {
+    display: inline-block;
+    border: none;
+    padding: .8rem 1.4rem;
+    margin-right: 3rem;
+    cursor: pointer;
+    font-size: 1.7rem;
+    color: white;
+}
+
+.confirm-form .back-btn {
+    background:#1D86FF;
+}
+
+.confirm-form .delete-btn {
+    background:#FF0000;
+}
+
+.confirm-form .tag-btn {
+    background:#79C75A;
+}
