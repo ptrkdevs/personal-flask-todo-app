@@ -6,7 +6,7 @@
 
 #### collections
 
-![todo home page]('/images/markdown/todo_home.png')
+![todo home page]('/static/images/markdown/todo_home.png')
 
 #### individual collection
 
