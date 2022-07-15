@@ -335,7 +335,7 @@ footer .footer--link {
     font-weight: 400;
 }
 
-.confirm-form  button {
+.confirm-form  button, input[type='submit'] {
     display: inline-block;
     border: none;
     padding: .8rem 1.4rem;

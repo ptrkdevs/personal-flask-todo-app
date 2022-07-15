@@ -1,9 +1,9 @@
 {% extends 'base.html' %} {% block content %} {% if action == 'tag' %}
 <div class="confirm-form">
-  <h1>Tag {{item}} as completed?</h1>
-  <form action="#" method="POST">
-    <button class="back-btn"><a href="{{ url_for('todos',id=list_id) }}">Go Back</a></button>
+  <h1>Tag {{item.body}} as completed?</h1>
 
+  <form action="#" method="POST">
+    <button class="back-btn"><a href="{{ url_for('todos',id=item.list_id) }}">Go Back</a></button>
     <button class="tag-btn" type="submit">TAG AS COMPLETE</button>
   </form>
 </div>
@@ -12,16 +12,19 @@
 <div class="confirm-form">
   {% if object == 'collection' %}
   <h1>Are you sure you want to delete collection {{item}} ?</h1>
-  {% else %}
-  <h1>Are you sure you want to delete todo {{item}} ?</h1>
-  {% endif %}
+
   <form action="#" method="POST">
-    {% if object == 'todo' %}
-    <button class="back-btn"><a href="{{ url_for('todos',id=list_id) }}">Go Back</a></button>
-    {% else %}
     <button class="back-btn"><a href="{{ url_for('home') }}">Go Back</a></button>
-    {% endif %}
     <button class="delete-btn" type="submit">DELETE</button>
   </form>
+  {% else %}
+  <h1>Are you sure you want to delete todo {{item.body}} ?</h1>
+
+  <form action="#" method="POST">
+    <button class="back-btn"><a href="{{ url_for('todos',id=item.list_id) }}">Go Back</a></button>
+    <button class="delete-btn" type="submit">DELETE</button>
+  </form>
+
+  {% endif %}
 </div>
 {% endif %} {% endblock%}

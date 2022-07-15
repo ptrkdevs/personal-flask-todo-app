@@ -119,13 +119,8 @@ def create_app():
 
         except InvalidId:
             return render_template("error.html", error_message="Item Doesnt exists")
-        else:
-            return render_template(
-                "confirm.html",
-                item=todo["body"],
-                object=object,
-                list_id=list_id,
-            )
+
+        return render_template("confirm.html", item=todo, object=object)
 
     @app.route("/todos/complete/<string:id>", methods=["GET", "POST"])
     def tag_todo(id: str):
@@ -149,14 +144,15 @@ def create_app():
         except InvalidId as e:
             return render_template("error.html", error_message="Item Doesnt exists")
 
-        return render_template(
-            "confirm.html", action=action, item=todo["body"], list_id=todo["list_id"]
-        )
+        print(todo["list_id"])
+
+        return render_template("confirm.html", action=action, item=todo)
 
     @app.route("/todos/<string:id>")
     def todos(id: str):
 
         try:
+            print(id)
             todos = [item for item in app.db.todos.find({"list_id": ObjectId(id)})]
 
             archived_todos = [todo for todo in todos if todo["completed"]]
